@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fffdf5;
+  --color-gold-100: #fef7da;
+  --color-gold-200: #fde8ab;
+  --color-gold-300: #fad270;
+  --color-gold-400: #f7b73c;
+  --color-gold-500: #e0981b;
+  --color-gold-600: #c27912;
+  --color-gold-700: #a15b10;
+  --color-gold-800: #844710;
+  --color-gold-900: #6d3910;
+  --color-gold-950: #3f1c05;
+
+  --color-islamic-50: #eefdf5;
+  --color-islamic-100: #d5fae5;
+  --color-islamic-200: #aef3cd;
+  --color-islamic-300: #75e7ab;
+  --color-islamic-400: #3bd383;
+  --color-islamic-500: #15b865;
+  --color-islamic-600: #0b9550;
+  --color-islamic-700: #0b7642;
+  --color-islamic-800: #0d5d36;
+  --color-islamic-900: #0c4d2e;
+  --color-islamic-950: #042b1a;
+
+  --font-arabic: 'Amiri', serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-playfair: 'Playfair Display', serif;
+
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-glow-pulse: glowPulse 3s infinite ease-in-out;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-float-slow: float 6s ease-in-out infinite;
+  --animate-float-medium: float 4s ease-in-out infinite;
+  --animate-sway: sway 8s ease-in-out infinite;
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 10px rgba(224, 152, 27, 0.4)); }
+    50% { opacity: 0.8; filter: drop-shadow(0 0 25px rgba(224, 152, 27, 0.7)); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg) translateX(-5px); }
+    50% { transform: rotate(3deg) translateX(5px); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background-color: #02110c; /* Deep emerald-black base */
+    color: #f3f4f6;
+    overflow-x: hidden;
+  }
+
+  /* Custom gold scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #010c08;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e0981b;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #f7b73c;
+  }
+}
+
+/* Premium glassmorphism overlay card */
+.glass-card {
+  background: rgba(2, 20, 13, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(224, 152, 27, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 12px rgba(224, 152, 27, 0.55), 0 0 2px rgba(224, 152, 27, 0.85);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 12px rgba(21, 184, 101, 0.5);
+}
+
+/* Islamic Geometric Pattern overlays */
+.geometric-bg {
+  background-image: radial-gradient(rgba(224, 152, 27, 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+/* Lantern light glow */
+.lantern-glow {
+  filter: drop-shadow(0 0 12px rgba(247, 183, 60, 0.75));
+}
+
+/* Audio wave bouncy visualizer */
+.audio-bar {
+  display: inline-block;
+  width: 2.5px;
+  height: 2px;
+  background-color: #e0981b;
+  margin: 0 1.5px;
+  border-radius: 1px;
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    height: 3px;
+  }
+  100% {
+    height: 16px;
+  }
+}
