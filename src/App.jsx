@@ -34,7 +34,7 @@ import {
 
 export default function App() {
   // Sound states
-  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [showAudioTooltip, setShowAudioTooltip] = useState(true);
 
   // Handle automatic loop start on mount / click unlock
