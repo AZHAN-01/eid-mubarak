@@ -14,7 +14,7 @@ class SpiritualSynth {
     if (this.audioElement) return;
     
     // 1. Create the direct HTML5 Audio element for background Talbiyah
-    this.audioElement = new Audio('/talbiyah.mp3');
+    this.audioElement = new Audio(`${import.meta.env.BASE_URL}talbiyah.mp3`);
     this.audioElement.loop = true;
     this.audioElement.volume = 0; // Start at 0 for clean fade-in
     
